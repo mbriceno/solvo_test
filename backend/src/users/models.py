@@ -7,6 +7,7 @@ class CustomUser(AbstractUser):
     email = models.EmailField()
     platform = models.ForeignKey(
         Platform, on_delete=models.CASCADE, related_name="users",
+        null=True, blank=True,
     )
 
     class Meta:

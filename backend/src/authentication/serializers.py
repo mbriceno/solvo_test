@@ -50,7 +50,7 @@ class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
 
 
 class RegisterSerializer(serializers.ModelSerializer):
-    platform_slug = serializers.CharField(write_only=True)
+    platform_slug = serializers.CharField(write_only=True, required=True)
     password = serializers.CharField(write_only=True)
 
     class Meta:

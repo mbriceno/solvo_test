@@ -32,8 +32,12 @@ class RuleResolver:
         cache.set(cache_key, platform_value, self.CACHE_TIMEOUT)
         return platform_value
 
-    def invalidate_platform_rules(self, platform_slug: str):
-        # In a real scenario, we might want to track keys or use a pattern
-        # Redis supports keys but it's not efficient.
-        # For this prototype, we'll assume resolution is updated on next expiry or manual clear.
-        pass
+    def invalidate_platform_rules(self, platform_slug: str) -> None:
+        """
+        Invalidates all rules cached for a specific platform 
+        using pattern matching.
+        """
+        if hasattr(cache, "delete_pattern"):
+            cache.delete_pattern(f"rule:{platform_slug}:*")
+        else:
+            cache.clear()
