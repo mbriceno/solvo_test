@@ -1,0 +1,10 @@
+{
+  "workflow": "speckit",
+  "specName": "001-device-management",
+  "branch": "001-device-management",
+  "selectedAt": "2026-04-24T21:35:13.477Z",
+  "currentStep": "specify",
+  "status": "draft",
+  "stepHistory": {},
+  "transitions": []
+}

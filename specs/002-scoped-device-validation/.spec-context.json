@@ -1,0 +1,10 @@
+{
+  "workflow": "speckit",
+  "specName": "002-scoped-device-validation",
+  "branch": "002-scoped-device-validation",
+  "selectedAt": "2026-04-25T21:11:09.586Z",
+  "currentStep": "specify",
+  "status": "draft",
+  "stepHistory": {},
+  "transitions": []
+}

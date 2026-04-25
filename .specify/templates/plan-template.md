@@ -17,21 +17,29 @@
   the iteration process.
 -->
 
-**Language/Version**: [e.g., Python 3.11, Swift 5.9, Rust 1.75 or NEEDS CLARIFICATION]  
-**Primary Dependencies**: [e.g., FastAPI, UIKit, LLVM or NEEDS CLARIFICATION]  
-**Storage**: [if applicable, e.g., PostgreSQL, CoreData, files or N/A]  
-**Testing**: [e.g., pytest, XCTest, cargo test or NEEDS CLARIFICATION]  
-**Target Platform**: [e.g., Linux server, iOS 15+, WASM or NEEDS CLARIFICATION]
-**Project Type**: [e.g., library/cli/web-service/mobile-app/compiler/desktop-app or NEEDS CLARIFICATION]  
-**Performance Goals**: [domain-specific, e.g., 1000 req/s, 10k lines/sec, 60 fps or NEEDS CLARIFICATION]  
-**Constraints**: [domain-specific, e.g., <200ms p95, <100MB memory, offline-capable or NEEDS CLARIFICATION]  
-**Scale/Scope**: [domain-specific, e.g., 10k users, 1M LOC, 50 screens or NEEDS CLARIFICATION]
+**Language/Version**: Python 3.x
+**Primary Dependencies**: Django, DRF, SimpleJWT, Redis, drf-spectacular
+**Storage**: SQLite (initial), Redis (caching/broker)
+**Testing**: OMITTED (per Constitution Principle II)
+**Target Platform**: Docker / Linux
+**Project Type**: Backend API
+**Performance Goals**: Low-latency (Redis caching mandated)
+**Constraints**: Clean Architecture (SOLID, DRY, KISS), Scoped JWT
+**Scale/Scope**: Multi-platform identity support
 
 ## Constitution Check
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+- [ ] **I. Code Quality**: Does the plan ensure Ruff/Pylance compliance?
+- [ ] **II. Phased Development**: Are all testing tasks omitted?
+- [ ] **III. Clean Architecture**: Is logic separated into Services and Repositories? Does it follow SOLID/DRY/KISS?
+- [ ] **IV. Scoped Auth**: Does the design enforce both User and Platform scoped JWT?
+- [ ] **V. Multi-Platform Identity**: Does the data model support same email across platforms?
+- [ ] **VI. Event-Driven**: Are relevant events identified for Celery/Redis processing?
+- [ ] **VII. Dynamic Business Rules**: Are rules configurable via DB?
+- [ ] **VIII. Performance**: Is Redis caching integrated into the design?
+- [ ] **IX. API Documentation**: Are OpenAPI schema annotations planned for all endpoints?
 
 ## Project Structure
 

@@ -1,0 +1,10 @@
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP", "PL", "B"]
+ignore = ["E501"]
+target-version = "py311"
+
+[tool.ruff.format]
+line-length = 88
+
+[tool.ruff.lint.mccabe]
+max-complexity = 10
