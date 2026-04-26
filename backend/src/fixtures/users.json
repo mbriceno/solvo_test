@@ -1,0 +1,207 @@
+[
+{
+    "model": "users.customuser",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$G0hiGUMAolRYk9R0hpDPTJ$UD5X+lguV99MkEs0cODZVniN44M+HG8hqBJYG+mzYgg=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "dev@tests.com_alpha",
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-04-25T20:23:07.195Z",
+        "email": "dev@tests.com",
+        "platform": 2,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.customuser",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$upGAvoZ63LBbM2cZc4IAq6$MiAaRimGLhqHaxni18FSx7QOzP/lndc0PMucCwQtVlA=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "dev@tests.com_beta",
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-04-25T22:07:51.163Z",
+        "email": "dev@tests.com",
+        "platform": 3,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.customuser",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$iM04QT7rCZAm8Uhfd5n2eO$wyPv5aAcNPSP4YnezrnZ+RP5xN42WjMMhvDPA7VJhSw=",
+        "last_login": "2026-04-25T22:35:26.790Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2026-04-25T22:34:43.407Z",
+        "email": "admin@admin.com",
+        "platform": null,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.customuser",
+    "pk": 5,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$HqIPQFoUoLqyU1yf51rKor$SZwVnjosxLwwfW/Rl1iQWtbB3IJ4Ha37t5Bwz+6nTyo=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "user1@tests.com_beta",
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-04-26T15:24:36.699Z",
+        "email": "user1@tests.com",
+        "platform": 3,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.customuser",
+    "pk": 6,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$GBQTMQi3pcS7p9nyio7VyI$8v6usbB+w5LytD4hrd61UTeFqc756AeYC6Yu7J/9b+A=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "user2@tests.com_alpha",
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-04-26T15:32:26.776Z",
+        "email": "user2@tests.com",
+        "platform": 2,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.customuser",
+    "pk": 7,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$tgXfPxqHVE71gdxDp2bO7R$Q6Y9CtGlAIGuYiTSn0FLcuqyN84DYGQfiVowlGaB1tY=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "user3@tests.com_alpha",
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-04-26T15:37:49.535Z",
+        "email": "user3@tests.com",
+        "platform": 2,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.customuser",
+    "pk": 8,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$z1TBGoSOFHymSDFyB35saa$SKYkXXOnqLk2iQORy1zafI7xTNyJnaA6yMGqts6ZMnE=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "user3@tests.com_beta",
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-04-26T15:38:23.246Z",
+        "email": "user3@tests.com",
+        "platform": 3,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.device",
+    "pk": 2,
+    "fields": {
+        "user": 1,
+        "platform": 2,
+        "name": "Android Phone",
+        "ip_address": "10.23.23.198",
+        "is_active": true,
+        "last_seen": "2026-04-25T22:03:53.243Z"
+    }
+},
+{
+    "model": "users.device",
+    "pk": 3,
+    "fields": {
+        "user": 1,
+        "platform": 2,
+        "name": "Android Table",
+        "ip_address": "10.25.25.198",
+        "is_active": true,
+        "last_seen": "2026-04-25T22:04:22.674Z"
+    }
+},
+{
+    "model": "users.device",
+    "pk": 4,
+    "fields": {
+        "user": 2,
+        "platform": 3,
+        "name": "Iphone Table",
+        "ip_address": "10.27.27.198",
+        "is_active": true,
+        "last_seen": "2026-04-25T22:08:44.987Z"
+    }
+},
+{
+    "model": "users.device",
+    "pk": 5,
+    "fields": {
+        "user": 2,
+        "platform": 3,
+        "name": "Iphone Phone",
+        "ip_address": "10.30.30.198",
+        "is_active": true,
+        "last_seen": "2026-04-25T22:09:09.524Z"
+    }
+},
+{
+    "model": "users.device",
+    "pk": 6,
+    "fields": {
+        "user": 2,
+        "platform": 3,
+        "name": "Iphone Phone 15",
+        "ip_address": "10.31.31.198",
+        "is_active": true,
+        "last_seen": "2026-04-25T22:12:01.556Z"
+    }
+},
+{
+    "model": "users.device",
+    "pk": 7,
+    "fields": {
+        "user": 2,
+        "platform": 3,
+        "name": "Apple MAc",
+        "ip_address": "10.33.33.198",
+        "is_active": true,
+        "last_seen": "2026-04-25T22:12:38.147Z"
+    }
+}
+]

@@ -1,0 +1,74 @@
+[
+{
+    "model": "notifications.notification",
+    "pk": 1,
+    "fields": {
+        "user": 5,
+        "notification_type": "REGISTRATION",
+        "event_source": "auth_service",
+        "template_context": {
+            "welcome_name": "user1@tests.com"
+        },
+        "is_read": false,
+        "send_email": false,
+        "send_sms": false,
+        "send_socket": false,
+        "created_at": "2026-04-26T15:24:37.081Z",
+        "sent_at": "2026-04-26T15:24:37.177Z"
+    }
+},
+{
+    "model": "notifications.notification",
+    "pk": 2,
+    "fields": {
+        "user": 6,
+        "notification_type": "REGISTRATION",
+        "event_source": "auth_service",
+        "template_context": {
+            "welcome_name": "user2@tests.com"
+        },
+        "is_read": false,
+        "send_email": false,
+        "send_sms": false,
+        "send_socket": false,
+        "created_at": "2026-04-26T15:32:27.159Z",
+        "sent_at": "2026-04-26T15:32:27.282Z"
+    }
+},
+{
+    "model": "notifications.notification",
+    "pk": 3,
+    "fields": {
+        "user": 7,
+        "notification_type": "REGISTRATION",
+        "event_source": "auth_service",
+        "template_context": {
+            "welcome_name": "user3@tests.com"
+        },
+        "is_read": false,
+        "send_email": false,
+        "send_sms": true,
+        "send_socket": false,
+        "created_at": "2026-04-26T15:37:49.912Z",
+        "sent_at": "2026-04-26T15:37:50.015Z"
+    }
+},
+{
+    "model": "notifications.notification",
+    "pk": 4,
+    "fields": {
+        "user": 8,
+        "notification_type": "REGISTRATION",
+        "event_source": "auth_service",
+        "template_context": {
+            "welcome_name": "user3@tests.com"
+        },
+        "is_read": false,
+        "send_email": true,
+        "send_sms": false,
+        "send_socket": false,
+        "created_at": "2026-04-26T15:38:23.634Z",
+        "sent_at": "2026-04-26T15:38:23.664Z"
+    }
+}
+]

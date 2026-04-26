@@ -1,0 +1,67 @@
+[
+{
+    "model": "platforms.globalconfig",
+    "pk": 1,
+    "fields": {
+        "rule_name": "max_devices",
+        "default_value": 5
+    }
+},
+{
+    "model": "platforms.globalconfig",
+    "pk": 2,
+    "fields": {
+        "rule_name": "allow_inactive_login",
+        "default_value": false
+    }
+},
+{
+    "model": "platforms.globalconfig",
+    "pk": 3,
+    "fields": {
+        "rule_name": "notify_registration_email",
+        "default_value": false
+    }
+},
+{
+    "model": "platforms.globalconfig",
+    "pk": 4,
+    "fields": {
+        "rule_name": "notify_registration_sms",
+        "default_value": false
+    }
+},
+{
+    "model": "platforms.globalconfig",
+    "pk": 5,
+    "fields": {
+        "rule_name": "notify_registration_socket",
+        "default_value": false
+    }
+},
+{
+    "model": "platforms.platform",
+    "pk": 2,
+    "fields": {
+        "name": "Alpha",
+        "slug": "alpha",
+        "rule_overrides": {
+            "max_devices": 5,
+            "notify_registration_sms": true
+        }
+    }
+},
+{
+    "model": "platforms.platform",
+    "pk": 3,
+    "fields": {
+        "name": "Beta",
+        "slug": "beta",
+        "rule_overrides": {
+            "max_devices": 4,
+            "allow_inactive_login": false,
+            "notify_registration_email": true
+        }
+    }
+}
+]
