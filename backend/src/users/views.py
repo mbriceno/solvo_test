@@ -1,10 +1,12 @@
 from core.pagination import CustomPagination
 from django.http import HttpRequest
+from django_filters.rest_framework import DjangoFilterBackend
 from drf_spectacular.utils import extend_schema, extend_schema_view
 from platforms.rule_resolver import RuleResolver
 from rest_framework import permissions, status, viewsets
 from rest_framework.response import Response
 
+from users.filters import DeviceFilter
 from users.repositories import DeviceRepository
 from users.services import DeviceService
 
@@ -40,8 +42,13 @@ class DeviceViewSet(viewsets.ModelViewSet):
     serializer_class = DeviceSerializer
     permission_classes = (permissions.IsAuthenticated,)
     pagination_class = CustomPagination
+    filter_backends = (DjangoFilterBackend,)
+    filterset_class = DeviceFilter
 
     def get_queryset(self):
+        if getattr(self, "swagger_fake_view", False):
+            return DeviceRepository.model.objects.none()
+
         service = DeviceService(DeviceRepository(), RuleResolver())
         return service.get_devices_for_user_on_platform(
             user=self.request.user,
