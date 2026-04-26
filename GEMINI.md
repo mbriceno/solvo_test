@@ -23,6 +23,7 @@ cd src && pytest && ruff check .
 Python 3.x: Follow standard conventions
 
 ## Recent Changes
+- 003-notification-domain-module: Added Python 3.x + Django, DRF, SimpleJWT, Redis, drf-spectacular
 - 002-scoped-device-validation: Added Python 3.x + Django, DRF, SimpleJWT, Redis, drf-spectacular
 
 - 001-device-management: Added Python 3.x + Django, DRF, SimpleJWT, Redis, drf-spectacular, Celery

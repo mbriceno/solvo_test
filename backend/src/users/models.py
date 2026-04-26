@@ -17,11 +17,6 @@ class CustomUser(AbstractUser):
             ),
         )
 
-    # Use email and platform for authentication if needed, but standard
-    # username is still there by default in AbstractUser.
-    # We might want to override username or use email as primary.
-    # For now, following spec's multi-tenant identity.
-
 
 class Device(models.Model):
     user = models.ForeignKey(
@@ -36,9 +31,9 @@ class Device(models.Model):
     last_seen = models.DateTimeField(auto_now=True)
 
     class Meta:
-        indexes = [
+        indexes = (
             models.Index(fields=["user", "platform"]),
-        ]
+        )
 
     def __str__(self) -> str:
         return f"{self.name} ({self.user.email})"

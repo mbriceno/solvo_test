@@ -20,3 +20,7 @@ The **Service-Repository** pattern was specifically leveraged to enforce platfor
 
 ## 8. Indexing Strategy for Scale
 To support the target scale of **1 million users**, a composite index was added to the `Device` model on `(user_id, platform_id)`. This ensures that scoped retrieval queries (which are the most frequent operation) remain low-latency and performant as the dataset grows. The indexing strategy prioritizes read performance in the primary user journey.
+
+## 9. Isolated Notification Domain Module
+The `notifications` system is implemented as a standalone domain module to ensure microservice readiness and clean separation of concerns. By using a **Service-Repository** pattern and a **Strategy-based Dispatcher**, we isolate delivery logic (Email, SMS, Socket) from business triggers (e.g., Auth registration). This architecture allows the system to scale its delivery capabilities independently of other core business services.
+

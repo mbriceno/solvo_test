@@ -1,6 +1,6 @@
 from core.base import BaseRepository
 
-from .models import Platform
+from platforms.models import Platform
 
 
 class PlatformRepository(BaseRepository[Platform]):

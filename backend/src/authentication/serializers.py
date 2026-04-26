@@ -1,8 +1,15 @@
 from django.contrib.auth import authenticate
+from notifications.repositories import NotificationRepository
+from notifications.services import NotificationService
 from platforms.models import Platform
+from platforms.rule_resolver import RuleResolver
 from rest_framework import serializers
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from users.models import CustomUser
+from users.repositories import UserRepository
+from users.services import UserService
+
+from .services import AuthService
 
 
 class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
@@ -62,9 +69,15 @@ class RegisterSerializer(serializers.ModelSerializer):
         password = validated_data.pop("password")
         platform = Platform.objects.get(slug=platform_slug)
 
-        return CustomUser.objects.create_user(
+        # Instantiate services (In a real app, use dependency injection)
+        user_service = UserService(UserRepository())
+        notification_service = NotificationService(
+            NotificationRepository(), RuleResolver()
+        )
+        auth_service = AuthService(user_service, notification_service)
+
+        return auth_service.register_user(
             email=validated_data["email"],
-            platform=platform,
-            username=f"{validated_data['email']}_{platform_slug}",
             password=password,
+            platform=platform,
         )

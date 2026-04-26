@@ -1,0 +1,10 @@
+{
+  "workflow": "speckit",
+  "specName": "003-notification-domain-module",
+  "branch": "003-notification-domain-module",
+  "selectedAt": "2026-04-25T23:15:16.551Z",
+  "currentStep": "specify",
+  "status": "draft",
+  "stepHistory": {},
+  "transitions": []
+}

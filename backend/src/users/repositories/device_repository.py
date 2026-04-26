@@ -1,18 +1,8 @@
-from django.db.models import QuerySet
-
 from core.base import BaseRepository
+from django.db.models import QuerySet
 from platforms.models import Platform
 
-from .models import CustomUser, Device
-
-
-class UserRepository(BaseRepository[CustomUser]):
-    model = CustomUser
-
-    def get_by_email_and_platform(
-        self, email: str, platform: Platform,
-    ) -> CustomUser:
-        return self.model.objects.get(email=email, platform=platform)
+from users.models import CustomUser, Device
 
 
 class DeviceRepository(BaseRepository[Device]):
@@ -21,9 +11,7 @@ class DeviceRepository(BaseRepository[Device]):
     def find_by_user_and_platform(
         self, user: CustomUser, platform: Platform,
     ) -> QuerySet[Device]:
-        """
-        Retrieves all devices for a specific user and platform.
-        """
+
         return self.model.objects.filter(user=user, platform=platform)
 
     def get_active_count_for_user(

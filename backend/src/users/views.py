@@ -5,10 +5,10 @@ from platforms.rule_resolver import RuleResolver
 from rest_framework import permissions, status, viewsets
 from rest_framework.response import Response
 
-from .models import Device
-from .repositories import DeviceRepository
+from users.repositories import DeviceRepository
+from users.services import DeviceService
+
 from .serializers import DeviceSerializer
-from .services import DeviceService
 
 
 @extend_schema_view(
@@ -48,7 +48,7 @@ class DeviceViewSet(viewsets.ModelViewSet):
             platform=self.request.user.platform,
         )
 
-    def create(self, request: HttpRequest, *args, **kwargs):
+    def create(self, request: HttpRequest, *args, **kwargs) -> Response:
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
 

@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     "authentication",
     "users",
     "platforms",
+    "notifications",
 ]
 
 AUTH_USER_MODEL = "users.CustomUser"
@@ -180,3 +181,37 @@ USE_TZ = True
 STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "verbose": {
+            "format": "[%(levelname)s]: %(message)s",
+        },
+    },
+    "filters": {
+        "require_debug_true": {
+            "()": "django.utils.log.RequireDebugTrue",
+        },
+    },
+    "handlers": {
+        "console": {
+            "level": "INFO",
+            "class": "logging.StreamHandler",
+            "formatter": "verbose",
+        },
+    },
+    "loggers": {
+        "django.db.backends": {
+            "handlers": ["console"],
+            "level": "DEBUG",
+            "propagate": False,
+        },
+        "django": {
+            "handlers": ["console"],
+            "level": "DEBUG",
+            "propagate": True,
+        },
+    },
+}
