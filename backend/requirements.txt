@@ -10,3 +10,6 @@ django-environ>=0.10.0
 django-filter>=23.2
 ruff>=0.0.263
 dj-database-url
+pytest
+pytest-django
+pytest-mock

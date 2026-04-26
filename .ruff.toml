@@ -1,10 +1,9 @@
-[tool.ruff.lint]
+[lint]
 select = ["E", "F", "W", "I", "N", "UP", "PL", "B"]
 ignore = ["E501"]
-target-version = "py311"
 
-[tool.ruff.format]
-line-length = 88
+[format]
+docstring-code-line-length = 80
 
-[tool.ruff.lint.mccabe]
+[lint.mccabe]
 max-complexity = 10

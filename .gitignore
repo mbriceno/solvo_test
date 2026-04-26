@@ -50,3 +50,6 @@ Thumbs.db
 .env.local
 .env.*
 prompts.md
+*.pyc
+.ruff_cache/
+.pytest_cache/
