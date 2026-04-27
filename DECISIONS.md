@@ -31,7 +31,7 @@ El proyecto se organizó en cuatro módulos independientes (`authentication`, `p
 Se integró el uso de IA y el framework **GitHub Spec Kit** como piezas centrales, incluyendo los scripts de automatización en el repositorio.
 
 * **Alternativa considerada:** Desarrollo manual tradicional ("Code-First").
-* **Por qué se descartó:** Para este caso un MVP entregable en un plazo corto de tiempo. El desarrollo manual de *boilerplate* consume tiempo que pude invertir de otra forma en el proyecto.
+* **Por qué se descartó:** Para este caso, que básicamente es un MVP entregable en un plazo corto de tiempo. El desarrollo manual de *boilerplate* consume tiempo que pude invertir de otra forma en el proyecto.
 * **Decisión final:** Adoptar **"Specification-First Development"**.
     1. **Documentación como Código:** Los scripts del Spec Kit hacen que el proceso sea transparente y reproducible.
     2. **Garantía de Estándares:** La IA actuó como motor de cumplimiento normativo (PEP8, Ruff, Type Hints).
@@ -51,7 +51,6 @@ Se implementó un motor de reglas basado en dos capas de precedencia, gestionado
 
 ### Justificación del Approach: ¿Por qué este diseño?
 
-* **Principio de Abierto/Cerrado (Solid OCP):** El sistema está "cerrado" para modificación (no hay que editar código para añadir una regla como `session_timeout`) pero "abierto" para extensión (basta con agregar la clave al JSON o a la tabla global).
 * **Eficiencia con Redis:** Consultar un `JSONField` y realizar un "fallback" jerárquico en cada request de validación es costoso a nivel de CPU y DB. Por ello, se implementó una **capa de caché en Redis** que almacena el resultado final de la resolución de reglas para cada plataforma. Esto garantiza que la validación sea una operación de **O(1)** en memoria.
 * **Agilidad del Negocio:** Permite al equipo de soporte o administradores ajustar límites de usuarios en tiempo real desde un panel administrativo, eliminando la dependencia de ciclos de despliegue (CI/CD) para cambios paramétricos.
 * **Por Mejorar:** Cabe destacar que la implementación fue desarrollada tomando en cuenta la generalidad, con una mejor definición del sistema de reglas y su utlidad futura, se podrían aplicar mejoras.
