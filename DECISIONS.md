@@ -49,7 +49,7 @@ Se implementó un motor de reglas basado en dos capas de precedencia, gestionado
 1. **Platform Override (Alta Prioridad):** Se consulta el campo `JSONField` en el modelo de la Plataforma. Si la regla existe (ej. `{"max_devices": 10}`), se toma este valor.
 2. **Global Template (Prioridad Media):** Si la regla no está definida para la plataforma, el sistema consulta la tabla `GlobalConfig`. Esto permite cambiar un valor por defecto para todo el ecosistema en tiempo de ejecución sin tocar una sola línea de código.
 
-### Justificación del Approach: ¿Por qué este diseño?
+### Justificación del Approach:
 
 * **Eficiencia con Redis:** Consultar un `JSONField` y realizar un "fallback" jerárquico en cada request de validación es costoso a nivel de CPU y DB. Por ello, se implementó una **capa de caché en Redis** que almacena el resultado final de la resolución de reglas para cada plataforma. Esto garantiza que la validación sea una operación de **O(1)** en memoria.
 * **Agilidad del Negocio:** Permite al equipo de soporte o administradores ajustar límites de usuarios en tiempo real desde un panel administrativo, eliminando la dependencia de ciclos de despliegue (CI/CD) para cambios paramétricos.
