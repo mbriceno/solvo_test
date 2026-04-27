@@ -44,7 +44,7 @@ Se integró el uso de IA y el framework **GitHub Spec Kit** como piezas centrale
 Este sistemas, exige límites o comportamientos distintos por plataforma (ej. la Plataforma A permite 5 dispositivos, la Plataforma B permite 10). Hardcodear estas reglas o crear columnas en la base de datos para cada una genera un sistema rígido, costoso de mantener y difícil de escalar.
 
 ### Solución
-Se implementó un motor de reglas basado en dos capas de precedencia, gestionado por un servicio especializado (`RuleResolver`):
+Se implementó un motor de reglas basado en dos capas de precedencia, gestionado por un servicio especializado (`RuleResolver`) apoyado en Redis como cache:
 
 1. **Platform Override (Alta Prioridad):** Se consulta el campo `JSONField` en el modelo de la Plataforma. Si la regla existe (ej. `{"max_devices": 10}`), se toma este valor.
 2. **Global Template (Prioridad Media):** Si la regla no está definida para la plataforma, el sistema consulta la tabla `GlobalConfig`. Esto permite cambiar un valor por defecto para todo el ecosistema en tiempo de ejecución sin tocar una sola línea de código.
